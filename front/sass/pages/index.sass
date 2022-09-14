@@ -58,68 +58,151 @@ body
     height: 130%
     pointer-events: none
     background: url("../img/cloud-max.png")
+    @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+      background: url('../img/cloud-max.png')
+    @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+      background: url('../img/cloud-tab.png')
+    @media screen and (max-width: 600px) and (orientation: portrait)
+      background: url("../img/cloud-mob.png")
+    @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+      background: url("../img/cloud-mob.png")
     transform: rotate(-10deg)
     background-size: cover
     background-position: 0 0
-    background-repeat: repeat-x
+    background-repeat: repeat
     animation: animated-sky 100000s linear infinite
-    //.cloud-1
-    //  width: 756px
-    //  height: 215px
-    //  position: absolute
-    //  top: 100px
-    //  right: 100px
-    //  animation: animCloud 30s infinite linear
-    //  background: url("../img/cloud-1-desc.png") no-repeat 50% 0/contain
-    //  @media screen and (max-width: 600px) and (orientation: portrait)
-    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
-    //  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
-    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
-    //.cloud-2
-    //  width: 347px
-    //  height: 99px
-    //  position: absolute
-    //  bottom: 30%
-    //  right: 100px
-    //  animation: animCloud 40s infinite linear
-    //  background: url("../img/cloud-2-desc.png") no-repeat 50% 0/contain
-    //.cloud-3
-    //  width: 711px
-    //  height: 202px
-    //  position: absolute
-    //  bottom: 0
-    //  right: -35px
-    //  animation: animCloud 60s infinite linear
-    //  background: url("../img/cloud-1-desc.png") no-repeat 50% 0/contain
-    //  @media screen and (max-width: 600px) and (orientation: portrait)
-    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
-    //  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
-    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
-    //.cloud-4
-    //  width: 757px
-    //  height: 290px
-    //  animation: animCloud 80s infinite linear
-    //  background: url("../img/cloud-3-desc.png") no-repeat 50% 0/contain
-    //.cloud-5
-    //  width: 425px
-    //  height: 149px
-    //  position: absolute
-    //  top: 30%
-    //  left: 100px
-    //  animation: animCloud 60s infinite linear
-    //  background: url("../img/cloud-2-desc.png") no-repeat 50% 0/contain
-    //.cloud-6
-    //  width: 756px
-    //  height: 215px
-    //  position: absolute
-    //  top: 100px
-    //  left: 100px
-    //  animation: animCloud2 80s infinite linear
-    //  background: url("../img/cloud-1-desc.png") no-repeat 50% 0/contain
-    //  @media screen and (max-width: 600px) and (orientation: portrait)
-    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
-    //  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
-    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
+  &__chips
+    position: absolute
+    width: 100%
+    height: 100%
+    .chip1,
+    .chip1-clone,
+    .chip1-clone-2
+      position: absolute
+      right: -170px
+      top: -120px
+      width: 421px
+      height: 363px
+      animation: chipAnim 20s linear
+      animation-fill-mode: forwards
+      @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+        background: url('../img/chip-1.png') no-repeat 50% 0/contain
+      @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+        background: url('../img/chip-1.png') no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/chip-1-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/chip-1-mob.png") no-repeat 50% 0/contain
+    .chip1-clone
+      animation: chipAnim-clone 20s linear infinite
+      animation-delay: 10s
+      top: -170px
+      right: -335px
+    .chip1-clone-2
+      animation: chipAnim-clone-2 20s linear infinite
+      animation-delay: 20s
+      top: 66px
+      right: -335px
+
+    .chip2
+      position: absolute
+      width: 450px
+      height: 340px
+      bottom: 16px
+      right: 0
+      animation: chipAnim2 10s linear infinite
+      @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+        background: url('../img/chip-2.png') no-repeat 50% 0/contain
+      @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+        background: url('../img/chip-2.png') no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/chip-2-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/chip-2-mob.png") no-repeat 50% 0/contain
+    .chip3,
+    .chip3-clone
+      position: absolute
+      width: 175px
+      height: 240px
+      bottom: -60px
+      left: 30%
+      animation: chipAnim3 30s linear
+      animation-fill-mode: forwards
+      @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+        background: url('../img/chip-3.png') no-repeat 50% 0/contain
+      @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+        background: url('../img/chip-3.png') no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/chip-3-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/chip-3-mob.png") no-repeat 50% 0/contain
+    .chip3-clone
+      animation: chipAnim3-clone 30s linear infinite
+      animation-delay: 6s
+      left: auto
+      right: -176px
+      bottom: 192px
+    .chip4,
+    .chip4-clone
+      position: absolute
+      width: 300px
+      height: 250px
+      bottom: 50px
+      left: 90px
+      animation: chipAnim4 40s linear
+      animation-fill-mode: forwards
+      @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+        background: url('../img/chip-4.png') no-repeat 50% 0/contain
+      @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+        background: url('../img/chip-4.png') no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/chip-4-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/chip-4-mob.png") no-repeat 50% 0/contain
+    .chip4-clone
+      animation: chipAnim4-clone 30s linear infinite
+      animation-delay: 15s
+      left: auto
+      right: -260px
+      bottom: 350px
+    .chip5,
+    .chip5-clone
+      position: absolute
+      width: 270px
+      height: 230px
+      top: 130px
+      left: 94px
+      animation: chipAnim5 30s linear
+      animation-fill-mode: forwards
+      @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+        background: url('../img/chip-5.png') no-repeat 50% 0/contain
+      @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+        background: url('../img/chip-5.png') no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/chip-5-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/chip-5-mob.png") no-repeat 50% 0/contain
+    .chip5-clone
+      animation: chipAnim5-clone 15s linear infinite
+      left: auto
+      right: 35%
+      top: -160px
+      animation-delay: 5s
+    .chip6
+      position: absolute
+      width: 305px
+      height: 290px
+      left: 30%
+      top: -228px
+      animation: chipAnim6 20s linear infinite
+      @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
+        background: url('../img/chip-6.png') no-repeat 50% 0/contain
+      @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
+        background: url('../img/chip-6.png') no-repeat 50% 0/contain
+      @media screen and (max-width: 600px) and (orientation: portrait)
+        background: url("../img/chip-6-mob.png") no-repeat 50% 0/contain
+      @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+        background: url("../img/chip-6-mob.png") no-repeat 50% 0/contain
 
 
 
@@ -331,25 +414,103 @@ body
     transform: translate(-50%, -50%) scale(1)
     opacity: 1
 
-@keyframes animCloud
-  0%
-    transform: translateX(110%)
-  100%
-    transform: translateX(-230%) translateY(430%)
-
-@keyframes animCloud2
-  0%
-    transform: translateX(0)
-  50%
-    transform: translateX(-100%)
-  100%
-    transform: translateX(100%)
-
 @keyframes animated-sky
   from
     background-position: 10000000px 0
   to
     background-position: 0 0
+
+@keyframes chipAnim
+  0%
+    right: -170px
+    top: -120px
+  100%
+    right: 100%
+    top: 50%
+
+@keyframes chipAnim-clone
+  0%
+    top: -170px
+    right: -335px
+  100%
+    right: 100%
+    top: 50%
+
+@keyframes chipAnim-clone-2
+  0%
+    top: 66px
+    right: -335px
+  100%
+    right: 100%
+    top: 50%
+
+@keyframes chipAnim2
+  0%
+    transform: translate(80%, 0)
+  100%
+    transform: translate(-100%, 100%)
+
+@keyframes chipAnim3
+  0%
+    bottom: -60px
+    left: 30%
+  100%
+    left: -100%
+    bottom: -50%
+
+@keyframes chipAnim3-clone
+  0%
+    right: -176px
+    bottom: 192px
+  100%
+    right: 100%
+    bottom: -50%
+
+@keyframes chipAnim4
+  0%
+    bottom: 50px
+    left: 90px
+  100%
+    left: -100%
+    bottom: -50%
+
+@keyframes chipAnim4-clone
+  0%
+    right: -260px
+    bottom: 350px
+  100%
+    right: 100%
+    bottom: -50%
+
+
+@keyframes chipAnim5
+  0%
+    top: 130px
+    left: 94px
+  100%
+    left: -100%
+    top: 50%
+
+@keyframes chipAnim5-clone
+  0%
+    right: 35%
+    top: -160px
+  100%
+    right: 100%
+    top: 40%
+
+@keyframes chipAnim6
+  0%
+    left: 30%
+    top: -228px
+  100%
+    left: -50%
+    top: 50%
+
+
+
+
+
 
 
 
