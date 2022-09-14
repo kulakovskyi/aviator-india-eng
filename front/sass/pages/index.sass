@@ -110,7 +110,7 @@ body
       height: 340px
       bottom: 16px
       right: 0
-      animation: chipAnim2 10s linear infinite
+      animation: chipAnim2 15s linear infinite
       @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
         background: url('../img/chip-2.png') no-repeat 50% 0/contain
       @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
@@ -188,6 +188,8 @@ body
       right: 35%
       top: -160px
       animation-delay: 5s
+      @media screen and (max-width: 1024px)
+        display: none
     .chip6
       position: absolute
       width: 305px
@@ -200,13 +202,14 @@ body
       @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
         background: url('../img/chip-6.png') no-repeat 50% 0/contain
       @media screen and (max-width: 600px) and (orientation: portrait)
-        background: url("../img/chip-6-mob.png") no-repeat 50% 0/contain
+        background: url("../img/chip-6.png") no-repeat 50% 0/contain
       @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
-        background: url("../img/chip-6-mob.png") no-repeat 50% 0/contain
+        background: url("../img/chip-6.png") no-repeat 50% 0/contain
 
 
 
   &__wrapper
+    margin-top: 70px
     width: 746px
     height: 746px
     position: relative
@@ -276,6 +279,7 @@ body
     display: flex
     flex-direction: column
     align-items: center
+    z-index: 10
     &-airplane
       max-width: 157px
       position: relative
@@ -354,6 +358,7 @@ body
       text-transform: uppercase
       color: $magenta
       margin: 0 0 25px 195px
+      white-space: nowrap
     &-bottom
       display: inline-block
       font-family: $font-suisse-bold
@@ -446,9 +451,11 @@ body
 
 @keyframes chipAnim2
   0%
-    transform: translate(80%, 0)
+    bottom: 51px
+    right: -370px
   100%
-    transform: translate(-100%, 100%)
+    right: 50%
+    bottom: -50%
 
 @keyframes chipAnim3
   0%
@@ -506,6 +513,14 @@ body
   100%
     left: -50%
     top: 50%
+
+@keyframes chipAnim6-550
+  0%
+    left: 30%
+    top: -228px
+  100%
+    left: -50%
+    top: 10%
 
 
 
