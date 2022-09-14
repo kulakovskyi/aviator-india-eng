@@ -3,6 +3,7 @@ $magenta: #ff267e
 $green: #05C489
 $green-hover: #09B47F
 $gray: #EDEDED
+$gray-opacity: rgba(237, 237, 237, 0.5)
 $text: #292929
 
 $font-suisse-med: SuisseIntl-Medium, sans-serif //
@@ -19,9 +20,6 @@ body
     max-width: 100%
     height: auto
 
-.container
-  max-width: 700px
-  margin: auto
 
 .usik-link
   position: absolute
@@ -31,12 +29,14 @@ body
   left: 0
   z-index: 60
 
-.usik
+.avio
   width: 100%
   height: 100%
   overflow: hidden
   position: relative
-
+  display: flex
+  align-items: center
+  justify-content: center
   @media screen and (min-width: 700px) and (orientation: landscape) and (min-height: 451px)
     background: url('../img/bg-desc.jpg') no-repeat 50% 0/cover
   @media screen and (min-width: 601px) and (max-width: 1024px) and (orientation: portrait)
@@ -45,230 +45,129 @@ body
     background: url("../img/bg-mob.jpg") no-repeat 50% 0/cover
   @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
     background: url("../img/bg-landscape.jpg") no-repeat 50% 0/cover
-  display: flex
-  justify-content: space-between
-  align-items: center
-  padding: 0 0 0 130px
-  &__pic
-    height: 100%
-    //width: 50%
-    position: relative
-
-  &__image
-    height: 95vh
-    position: absolute
-    width: 100vh
-    top: 165px
-    right: 50px
-    z-index: 2
-    picture
-      height: 100%
-      position: absolute
-      top: 0
-  &__quote
-    //width: 925px
-    //height: 567px
-    width: 100vh
-    height: 42vh
-    background: url("../img/quote.svg") no-repeat
-    background-size: contain
-    position: absolute
-    z-index: 1
-    top: -27px
-    right: 192px
-
-  &__text
-    display: flex
-    flex-direction: column
-    align-items: center
-    &-number
-      width: 120px
-      box-sizing: border-box
-      margin: 0 43px 0 0
-    &-date,
-    &-time
-      font-family: $font-suisse-med
-      font-size: 30px
-      line-height: 39px
-      color: $gray
-      letter-spacing: 0.08em
-      text-transform: uppercase
-      width: 100%
-      height: 54px
-      text-align: center
-      display: flex
-      align-items: center
-      justify-content: center
-      box-sizing: border-box
-    &-date
-      border: 2.7px solid $magenta
-      background: $magenta
-      border-radius: 10px 10px 0 0
-    &-time
-      border-left: 3px solid $magenta
-      border-bottom: 3px solid $magenta
-      border-right: 3px solid $magenta
-      border-radius: 0 0 10px 10px
-      background: $blue
-    &-name
-      font-family: $font-suisse-med
-      color: $gray
-      font-size: 58px
-      line-height: 75px
-      letter-spacing: 0.03em
-      text-transform: uppercase
-    &-enemy
-      font-family: $font-wulkan
-      color: $gray
-      font-size: 58px
-      line-height: 58px
-      letter-spacing: 0.02em
-      text-transform: uppercase
-      display: flex
-      align-items: center
-      img
-        max-width: 73px
-        margin: 0 20px 0 0
-    &-top
-      display: flex
-      align-items: center
-      margin: 0 0 53px 0
-    &-btn
-      display: inline-block
-      width: 100%
-      padding: 29px 29px 27px
-      max-width: 462px
-      text-align: center
-      color: $blue
-      background: $green
-      font-family: $font-suisse-semb
-      letter-spacing: 0.08em
-      text-transform: uppercase
-      border-radius: 4px
-      font-size: 24px
-      line-height: 31px
-      transition: background .3s ease
-      &:hover
-        background: $green-hover
-
   &__logo
     position: absolute
     top: 0
     left: 0
-    width: 421px
-    height: 184px
-    z-index: 3
+    max-width: 440px
+  &__wrapper
+    width: 746px
+    height: 746px
+    position: relative
 
-  &__legal
-    background: $gray
-    font-family: $font-din
-    font-size: 2.55vw
-    color: #000
-    position: absolute
-    bottom: 0
-    left: 0
-    right: 0
-    height: 75px
-    display: flex
-    justify-content: center
-    align-items: center
-    padding-top: 3px
-    z-index: 3
-  &__footer
-    position: absolute
-    z-index: 3
-    bottom: 75px
-    left: 0
-    right: 0
-    height: 140px
-    background: $blue
-    padding: 0 35px
-    border-top: 1px solid $magenta
-    display: flex
-    align-items: center
-    overflow: hidden
-    &__row
-      display: flex
-      align-items: center
-      justify-content: space-between
-      width: 100%
-    &__info
-      display: flex
-      align-items: center
-    &__plus
-      font-family: $font-suisse-med
-      color: $magenta
-      font-size: 45px
-      line-height: 70px
-      padding: 0 0 5px 2px
-      width: 73px
-      height: 60px
-      display: flex
-      align-items: center
-      justify-content: center
-      border: 1px solid $magenta
+    &::before
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 638px
+      height: 638px
+      border: 1px solid $gray-opacity
       border-radius: 50%
-      margin: 0 35px 0 35px
-      position: relative
-
-      &::before,
-      &::after
-        height: 48px
-        width: 1px
-        background: $magenta
-        position: absolute
-        left: 50%
-        transform: translateX(-50%)
+      animation: 4s scaleCircle infinite ease
+    &::after
+      content: ''
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      height: 544px
+      width: 544px
+      border: 1px dashed $gray
+      border-radius: 50%
+      animation: 4s scaleCircle infinite ease
+    &-border
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      width: 450px
+      height: 450px
+      border: 1px solid $gray-opacity
+      border-radius: 50%
+      animation: 4s scaleCircle infinite ease
       &::before
         content: ''
-        top: -83%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 346px
+        height: 346px
+        border: 1px dashed $gray
+        border-radius: 50%
+        animation: 4s scaleCircleBig infinite ease
       &::after
         content: ''
-        bottom: -83%
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+        width: 746px
+        height: 746px
+        border: 1px dashed $gray
+        border-radius: 50%
+        transform-origin: center
+        animation: 4s scaleCircleBig infinite ease
 
-    &__text
-      display: flex
-      align-items: center
-      &-left
-        font-family: $font-suisse-med
-        color: $magenta
-        font-size: 92px
-        line-height: 42px
-        letter-spacing: 0.04em
-        text-transform: uppercase
-        margin: 0 25px 0 0
-      &-right
-        font-family: $font-suisse-med
-        color: $magenta
-        font-size: 24px
-        line-height: 31px
-        letter-spacing: 0.02em
-        text-transform: uppercase
-        max-width: 160px
-        text-align: start
-    &__copy
-      display: flex
-      align-items: center
-      &-sponsor
-        display: flex
-        align-items: center
-        justify-content: center
-        margin: 0 16px 0 0
-        .visa-magenta
-          display: none
+  &__image
+    position: absolute
+    left: 50%
+    top: -72px
+    transform: translateX(-50%)
+    display: flex
+    flex-direction: column
+    align-items: center
+    &-airplane
+      max-width: 157px
+      position: relative
+      animation: 1.6s transformAirplane infinite ease
+      &::before
+        content: ''
+        position: absolute
+        right: -14px
+        top: -33px
+        width: 38px
+        height: 82.5px
+        background: url("../img/blades-2.svg") no-repeat 50% 0/contain
+        animation: 1.2s rotateBlade infinite linear
 
-        svg
-          fill: $gray
-          display: block
-          &:not(:last-child)
-            margin: 0 10px 0 0
-      &-links
-        display: flex
-        align-items: center
-      &-apple
-        max-width: 186px
-        margin: 0 15px 0 0
-      &-google
-        max-width: 210px
+    &-text
+      max-width: 223px
+      margin-top: -10px
+
+
+@keyframes rotateBlade
+  0%
+    transform: rotate3d(0, 0, 0, 0)
+  100%
+    transform: rotate3d(180, -90, 0, 360deg)
+
+@keyframes transformAirplane
+  0%
+    transform: translateY(0)
+  50%
+    transform: translateY(-10px)
+  100%
+    transform: translateY(0)
+
+@keyframes scaleCircle
+  0%
+    transform: translate(-50%, -50%) scale(1)
+  50%
+    transform: translate(-50%, -50%) scale(1.1)
+  100%
+    transform: translate(-50%, -50%) scale(1)
+
+@keyframes scaleCircleBig
+  0%
+    transform: translate(-50%, -50%) scale(1)
+  50%
+    transform: translate(-50%, -50%) scale(1.02)
+  100%
+    transform: translate(-50%, -50%) scale(1)
+
+
 
 
