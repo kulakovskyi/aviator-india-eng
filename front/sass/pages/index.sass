@@ -6,8 +6,9 @@ $gray: #EDEDED
 $gray-opacity: rgba(237, 237, 237, 0.5)
 $text: #292929
 
-$font-suisse-med: SuisseIntl-Medium, sans-serif //
-$font-suisse-semb: SuisseIntl-SemiBold, sans-serif //
+$font-suisse-med: SuisseIntl-Medium, sans-serif
+$font-suisse-bold: SuisseIntl-Bold, sans-serif // 700
+$font-suisse-semb: SuisseIntl-SemiBold, sans-serif // 600
 $font-wulkan: WulkanDisplay, sans-serif //
 $font-din: DINPro-CondLight, sans-serif
 
@@ -50,11 +51,85 @@ body
     top: 0
     left: 0
     max-width: 440px
+    z-index: 10
+  &__cloud
+    position: absolute
+    width: 130%
+    height: 130%
+    pointer-events: none
+    background: url("../img/cloud-max.png")
+    transform: rotate(-10deg)
+    background-size: cover
+    background-position: 0 0
+    background-repeat: repeat-x
+    animation: animated-sky 100000s linear infinite
+    //.cloud-1
+    //  width: 756px
+    //  height: 215px
+    //  position: absolute
+    //  top: 100px
+    //  right: 100px
+    //  animation: animCloud 30s infinite linear
+    //  background: url("../img/cloud-1-desc.png") no-repeat 50% 0/contain
+    //  @media screen and (max-width: 600px) and (orientation: portrait)
+    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
+    //  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
+    //.cloud-2
+    //  width: 347px
+    //  height: 99px
+    //  position: absolute
+    //  bottom: 30%
+    //  right: 100px
+    //  animation: animCloud 40s infinite linear
+    //  background: url("../img/cloud-2-desc.png") no-repeat 50% 0/contain
+    //.cloud-3
+    //  width: 711px
+    //  height: 202px
+    //  position: absolute
+    //  bottom: 0
+    //  right: -35px
+    //  animation: animCloud 60s infinite linear
+    //  background: url("../img/cloud-1-desc.png") no-repeat 50% 0/contain
+    //  @media screen and (max-width: 600px) and (orientation: portrait)
+    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
+    //  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
+    //.cloud-4
+    //  width: 757px
+    //  height: 290px
+    //  animation: animCloud 80s infinite linear
+    //  background: url("../img/cloud-3-desc.png") no-repeat 50% 0/contain
+    //.cloud-5
+    //  width: 425px
+    //  height: 149px
+    //  position: absolute
+    //  top: 30%
+    //  left: 100px
+    //  animation: animCloud 60s infinite linear
+    //  background: url("../img/cloud-2-desc.png") no-repeat 50% 0/contain
+    //.cloud-6
+    //  width: 756px
+    //  height: 215px
+    //  position: absolute
+    //  top: 100px
+    //  left: 100px
+    //  animation: animCloud2 80s infinite linear
+    //  background: url("../img/cloud-1-desc.png") no-repeat 50% 0/contain
+    //  @media screen and (max-width: 600px) and (orientation: portrait)
+    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
+    //  @media (max-width: 920px) and (orientation: landscape) and (max-height: 450px)
+    //    background: url("../img/cloud-1-mob.png") no-repeat 50% 0/cover
+
+
+
   &__wrapper
     width: 746px
     height: 746px
     position: relative
-
+    display: flex
+    align-items: center
+    justify-content: center
     &::before
       content: ''
       position: absolute
@@ -110,7 +185,6 @@ body
         border-radius: 50%
         transform-origin: center
         animation: 4s scaleCircleBig infinite ease
-
   &__image
     position: absolute
     left: 50%
@@ -136,6 +210,92 @@ body
     &-text
       max-width: 223px
       margin-top: -10px
+  &__button
+    position: absolute
+    bottom: -23px
+    left: 50%
+    transform: translateX(-50%)
+    z-index: 10
+  &__link
+    font-family: $font-suisse-semb
+    color: $blue
+    display: inline-block
+    padding: 31px 105px 29px
+    font-size: 24px
+    line-height: 31px
+    letter-spacing: 0.08em
+    white-space: nowrap
+    background: $green
+    border-radius: 4px
+    transition: background-color .3s ease
+    text-transform: uppercase
+    position: relative
+    &:hover
+      background: $green-hover
+    &::before
+      content: ''
+      position: absolute
+      left: -210px
+      top: -54px
+      width: 180px
+      height: 156px
+      background: url("../img/wing-left.png") no-repeat 50% 0/contain
+    &::after
+      content: ''
+      position: absolute
+      width: 180px
+      height: 156px
+      right: -210px
+      top: -54px
+      background: url("../img/wing-left.png") no-repeat 50% 0/contain
+      transform: scaleX(-1)
+  &__text
+    position: relative
+    z-index: 10
+    display: flex
+    flex-direction: column
+    align-items: center
+    &-top
+      font-family: $font-suisse-bold
+      font-size: 128px
+      line-height: 125px
+      letter-spacing: 0.02em
+      text-transform: uppercase
+      color: $gray
+      margin: 0 170px 6px 0
+    &-center
+      font-family: $font-wulkan
+      font-size: 128px
+      line-height: 125px
+      letter-spacing: 0.02em
+      text-transform: uppercase
+      color: $magenta
+      margin: 0 0 25px 195px
+    &-bottom
+      display: inline-block
+      font-family: $font-suisse-bold
+      font-size: 64px
+      line-height: 64px
+      letter-spacing: 0.04em
+      text-transform: uppercase
+      color: $blue
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25)
+      padding: 14px 20px 12px
+      background: $magenta
+      transform: rotate(-5.59deg)
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        top: -39px
+        left: 101px
+        width: 73px
+        height: 59px
+        transform: rotate(5.59deg)
+        background: url("../img/plus.svg") no-repeat 50% 0/contain
+
+
+
 
 
 @keyframes rotateBlade
@@ -163,10 +323,33 @@ body
 @keyframes scaleCircleBig
   0%
     transform: translate(-50%, -50%) scale(1)
+    opacity: 1
   50%
     transform: translate(-50%, -50%) scale(1.02)
+    opacity: 0.6
   100%
     transform: translate(-50%, -50%) scale(1)
+    opacity: 1
+
+@keyframes animCloud
+  0%
+    transform: translateX(110%)
+  100%
+    transform: translateX(-230%) translateY(430%)
+
+@keyframes animCloud2
+  0%
+    transform: translateX(0)
+  50%
+    transform: translateX(-100%)
+  100%
+    transform: translateX(100%)
+
+@keyframes animated-sky
+  from
+    background-position: 10000000px 0
+  to
+    background-position: 0 0
 
 
 
